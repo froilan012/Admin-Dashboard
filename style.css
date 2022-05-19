@@ -34,6 +34,10 @@ body {
     font-size: 15px;
 }
 
+#sidebar>button:hover {
+    background-color: rgba(0, 255, 255, 0.705);
+}
+
 svg {
     margin: 10px;
     padding-left: 5px;
@@ -115,16 +119,17 @@ svg {
     background-color: #e0f2fe;
     display: grid;
     grid-template: 1fr 1fr / 1fr 300px ;
-    gap: 20px;
+    gap: 10px;
+    padding: 20px;
 }
 
 .project {
     grid-area: 1 / 1 / 3 / 2;
     display: grid;
-    grid-template: 35px 1fr 1fr 1fr / 1fr 1fr;
+    grid-template-rows: 35px 1fr;
     padding: 10px;
-    align-items: center;
-    gap: 20px;
+    align-items:stretch;
+    gap: 10px;
 }
 
 .content-header {
@@ -134,19 +139,28 @@ svg {
     padding: 10px;
 }
 
+.content-body {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+    min-width: 550px;
+}
+
 .project>.content-header {
-    grid-column: 1 / 3;
+    grid-column: 1 / 2;
 }
 
 .contents {
-    height: 23vh;
-    min-height: 200px;
-    width: 1fr;
-    min-width: 200px;
+    height: 1fr;
     background-color: white;
     border-left: 10px solid #fcd34d;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.267);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .announcement, .trending {
@@ -156,10 +170,110 @@ svg {
     gap: 20px;
 }
 
-.announcements, .trendings {
+.announcements {
     height: 1fr;
     width: 1fr;
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.267);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header {
+    font-size: large;
+    font-weight: 1000;
+}
+
+.card-body {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.651);
+}
+
+.card-footer {
+    text-align: end;
+}
+
+a>svg {
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+a>svg:hover {
+    color: #0ea5e9;
+}
+
+.hide {
+    display: none;
+    text-align: end;
+    background-color: #d4d4d4;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+a>svg:hover + .hide {
+    display: inline-block;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.733);
+    font-size: 12px;
+}
+
+.line {
+    border: 1px solid rgba(0, 0, 0, 0.404);
+}
+
+.announcement-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    margin: 10px;
+}
+
+.announcement-header {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.announcement-notes {
+    font-size: 10px;
+}
+
+.trendings {
+    height: 1fr;
+    width: 1fr;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.267);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.trending-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.trending-pic {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.452);
 }
